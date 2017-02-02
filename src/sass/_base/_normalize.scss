@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/*===========================
+    Reset CSS
+===========================*/
+body, header, footer, nav, section, div, ul, li, p, h1, h2, dl, dd, dt{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    color: $base-text-color;
+    font-size: 62.5%;
+    font-family: 'Thonburi-Bold',"游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+    font-weight: bold;
+    line-height: 1.3;
+    word-break: break-all;
+}
+
+img {
+    vertical-align: top;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    display: inline-table;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+/* End hide from IE-mac */
