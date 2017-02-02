@@ -41,6 +41,7 @@ var src = {
   ejs: srcPath + "ejs/",
   sass: srcPath + "sass/",
   js: srcPath + "js/",
+  php: srcPath + "php/",
   img: srcPath + "img/",
   sprite: srcPath + "img/sprite/"
 }
@@ -51,6 +52,7 @@ var dest = {
   cssmin: destPath + "asset/cssmin/",
   js: destPath + "asset/js/",
   jsmin: destPath + "asset/jsmin/",
+  php: destPath + "asset/php/",
   img: destPath + "asset/img/",
   sprite: destPath + "asset/img/sprite/"
 }

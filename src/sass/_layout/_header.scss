@@ -4,39 +4,38 @@
 }
 
 header {
-  .header__wrapper {
-    width: 100%;
+  width: 100%;
+  height: 150px;
+  background-color: $header-color;
+
+  .header__innner {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1000px;
     height: 150px;
-    background-color: $header-color;
+    margin: 0 auto;
 
-    .header__innner {
-      position: relative;
+    .header__logo {
+      width: 150px;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      width: 1000px;
-      height: 150px;
-      margin: 0 auto;
-
-      .header__logo {
-        width: 150px;
-
-        img {
-          @extend .image__centering;
-        }
+      img {
+        @extend .image__centering;
       }
-      .header__search {
-        position: absolute;
-        right: 20px;
-        width: 70px;
-        margin-left: auto;
+    }
+    .header__search {
+      position: absolute;
+      right: 20px;
+      width: 50px;
+      margin-left: auto;
 
-        img {
-          @extend .image__centering;
-        }
+      img {
+        @extend .image__centering;
       }
     }
   }
+
 }
