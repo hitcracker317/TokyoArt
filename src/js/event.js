@@ -6,7 +6,7 @@ $(function(){
 
 function getEvent(url) {
   //API叩く
-  
+
   $.ajax({
     type: "GET",
     url: url,
@@ -32,7 +32,7 @@ function makeEventDom(event) {
   var imageContent = event.find('img')[2];
 
   var eventWrapper = $("<div class='event__wrapper'></div>");
-  var eventImage = $("<div class='event__image'><div class='event__image__inner'></div></div>");
+  var eventImage = $("<div class='event__image'></div>");
   var eventInfo = $("<div class='event__info'></div>");
   var eventTitleText = "<div class='event__title event__text'><p>" + titleContent + "</p></div>";
   var eventPlaceText = "<div class='event__place event__text'><p>" + placeContent + "</p></div>";
@@ -43,7 +43,7 @@ function makeEventDom(event) {
   $(".main__inner").append(eventWrapper);
   //画像
   eventWrapper.append(eventImage);
-  eventImage.find(".event__image__inner").append(imageContent);
+  eventImage.append(imageContent);
   //テキスト情報
   eventWrapper.append(eventInfo);
   eventInfo.append(eventTitleText);

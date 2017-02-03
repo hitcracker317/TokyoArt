@@ -1,0 +1,12 @@
+main {
+  width: 100%;
+  background-color: $main-color;
+
+  .main__inner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1250px;
+    margin: 0 auto;
+    padding: 50px 0 100px;
+  }
+}
