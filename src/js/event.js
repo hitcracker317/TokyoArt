@@ -34,8 +34,7 @@ function makeEventDom(event) {
   var eventImage = $("<div class='event__image'><div class='image__innner'></div></div>");
   var eventInfo = $("<div class='event__info'></div>");
   var eventTitleText = "<div class='event__title event__text'><p>" + titleContent + "</p></div>";
-  var eventPlaceText = "<div class='event__place event__text'><p>" + placeContent + "</p></div>";
-  var eventAddressText = "<div class='event__address event__text'><p>" + addressContent + "</p></div>";
+  var eventPlaceText = "<div class='event__place event__text'><p>" + addressContent + placeContent + "</p></div>";
   var eventDateText = "<div class='event__date event__text'><p>" + startTimeContent + "~" + endTimeContent + "</p></div>";
 
   //イベント要素
@@ -54,6 +53,5 @@ function makeEventDom(event) {
   eventWrapper.append(eventInfo);
   eventInfo.append(eventTitleText);
   eventInfo.append(eventPlaceText);
-  eventInfo.append(eventAddressText);
   eventInfo.append(eventDateText);
 }

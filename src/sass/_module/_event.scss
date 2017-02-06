@@ -33,5 +33,18 @@
 
   .event__info {
     padding: 15px;
+    padding-bottom: 5px;
+
+    .event__text {
+      margin-bottom: 10px;
+    }
+    .event__title p {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .event__place p , .event__date p{
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
   }
 }
