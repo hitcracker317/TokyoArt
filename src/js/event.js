@@ -23,14 +23,15 @@ function getEvent(url) {
 }
 
 function makeEventDom(event) {
-  var titleContent = event.children('name').text();
+  var eventLink = $(event).attr("href");
+  var titleContent = event.find('name').text();
   var placeContent = event.find('venue name').text();
   var addressContent = event.find('address').text();
   var startTimeContent = event.find('DateStart').text();
   var endTimeContent = event.find('DateEnd').text();
   var imageURL = $(event.find('img')[2]).attr("src");
 
-  var eventWrapper = $("<div class='event__wrapper'></div>");
+  var eventWrapper = $("<div class='event__wrapper'><a href=" + eventLink + " target=_'blank'></a></div>");
   var eventImage = $("<div class='event__image'><div class='image__innner'></div></div>");
   var eventInfo = $("<div class='event__info'></div>");
   var eventTitleText = "<div class='event__title event__text'><p>" + titleContent + "</p></div>";
@@ -41,8 +42,7 @@ function makeEventDom(event) {
   $(".main__inner").append(eventWrapper);
 
   //画像
-  eventWrapper.append(eventImage);
-
+  $(eventWrapper.find("a")).append(eventImage);
   if(imageURL == "http://www.tokyoartbeat.com/resources/images/nopic_170") {
     //xmlに画像が登録されていない場合、「no image」の画像を入れる
   } else {
@@ -50,7 +50,7 @@ function makeEventDom(event) {
   }
 
   //テキスト情報
-  eventWrapper.append(eventInfo);
+  $(eventWrapper.find("a")).append(eventInfo);
   eventInfo.append(eventTitleText);
   eventInfo.append(eventPlaceText);
   eventInfo.append(eventDateText);
