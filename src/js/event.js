@@ -1,12 +1,11 @@
 $(function(){
-  var url = "http://www.tokyoartbeat.com/list/event_searchNear?Latitude=35.671208&Longitude=139.76517&Schedule=upcoming&SortOrder=mostpopular";
+  var url = "http://www.tokyoartbeat.com/list/event_mostpopular.ja.xml";
   getEvent(url);
 
 });
 
 function getEvent(url) {
   //API叩く
-
   $.ajax({
     type: "GET",
     url: url,
@@ -29,10 +28,10 @@ function makeEventDom(event) {
   var addressContent = event.find('address').text();
   var startTimeContent = event.find('DateStart').text();
   var endTimeContent = event.find('DateEnd').text();
-  var imageContent = event.find('img')[2];
+  var imageURL = $(event.find('img')[2]).attr("src");
 
   var eventWrapper = $("<div class='event__wrapper'></div>");
-  var eventImage = $("<div class='event__image'></div>");
+  var eventImage = $("<div class='event__image'><div class='image__innner'></div></div>");
   var eventInfo = $("<div class='event__info'></div>");
   var eventTitleText = "<div class='event__title event__text'><p>" + titleContent + "</p></div>";
   var eventPlaceText = "<div class='event__place event__text'><p>" + placeContent + "</p></div>";
@@ -41,9 +40,16 @@ function makeEventDom(event) {
 
   //イベント要素
   $(".main__inner").append(eventWrapper);
+
   //画像
   eventWrapper.append(eventImage);
-  eventImage.append(imageContent);
+
+  if(imageURL == "http://www.tokyoartbeat.com/resources/images/nopic_170") {
+    //xmlに画像が登録されていない場合、「no image」の画像を入れる
+  } else {
+    eventImage.find(".image__innner").css("background-image","url(" + imageURL + ")");
+  }
+
   //テキスト情報
   eventWrapper.append(eventInfo);
   eventInfo.append(eventTitleText);

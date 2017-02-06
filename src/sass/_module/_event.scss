@@ -21,17 +21,13 @@
     overflow: hidden;
     background-color: #fff;
 
-    img {
-      position: absolute;
+    .image__innner {
       display: block;
-      width: 150%;
-      height: auto;
-    }
-
-    &::after {
-      content: "";
-      display: block;
+      width: 100%;
       padding-top: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
   }
 
