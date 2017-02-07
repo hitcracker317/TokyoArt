@@ -45,7 +45,8 @@ function makeEventDom(event) {
   //画像
   $(eventWrapper.find("a")).append(eventImage);
   if(imageURL == "http://www.tokyoartbeat.com/resources/images/nopic_170") {
-    //xmlに画像が登録されていない場合、「no image」の画像を入れる
+    eventImage.find(".image__innner").css("background-image","url('./asset/img/no_image.jpg')");
+
   } else {
     eventImage.find(".image__innner").css("background-image","url(" + imageURL + ")");
   }

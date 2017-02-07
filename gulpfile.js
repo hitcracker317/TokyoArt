@@ -141,7 +141,7 @@ img
 ------------------------ */
 gulp.task("imagemin", function(){
   console.log("---------- 画像を圧縮 ----------");
-  return gulp.src(src.img + "/**/*.+(jpg|jpeg|png|gif)")
+  return gulp.src(src.img + "/**/*.+(jpg|jpeg|png|gif|svg)")
   .pipe(imagemin({
     progressive: true,
     use: [pngquant({quality: "65-80", speed: 1})]
