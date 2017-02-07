@@ -1,6 +1,7 @@
 main {
   width: 100%;
   min-height: 100%;
+  padding-top: $header-height;
   background-color: $main-color;
 
   .main__inner {
