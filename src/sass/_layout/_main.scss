@@ -8,5 +8,16 @@ main {
     width: 1250px;
     margin: 0 auto;
     padding: 50px 0 100px;
+
+    @include min-column5 {
+      width: 100%;
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    @include column2 {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
   }
 }

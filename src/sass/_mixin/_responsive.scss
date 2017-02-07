@@ -1,0 +1,42 @@
+$widthColumn5: 1261px;
+$widthColumn4: 1260px;
+$widthColumn3: 1000px;
+$widthColumn2: 800px;
+$widthColumn1: 550px;
+
+
+@mixin column5 {
+	@media (min-width: $widthColumn5) {
+		@content;
+	}
+}
+
+@mixin min-column5 {
+	@media (max-width: $widthColumn5) {
+		@content;
+	}
+}
+
+@mixin column4 {
+	@media (min-width: $widthColumn3) and (max-width: $widthColumn4) {
+		@content;
+	}
+}
+
+@mixin column3 {
+	@media (min-width: $widthColumn2) and (max-width: $widthColumn3) {
+		@content;
+	}
+}
+
+@mixin column2 {
+	@media (min-width: $widthColumn1) and (max-width: $widthColumn2) {
+		@content;
+	}
+}
+
+@mixin column1 {
+	@media (max-width: $widthColumn1) {
+		@content;
+	}
+}
