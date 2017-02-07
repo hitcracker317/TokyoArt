@@ -1,0 +1,36 @@
+.center_position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.main__loading {
+  @extend .center_position;
+  width: 120px;
+  height: 120px;
+  background-color: #333;
+  z-index: 30;
+  background-color: rgba(51, 51, 51, 0.7);
+
+  .loading__icon {
+    @extend .center_position;
+    top: 10px;
+    left: 10px;
+    animation: loading_aimation 2.5s linear infinite;
+
+    @keyframes loading_aimation{
+      0%{
+        transform: rotate(0);
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+    }
+  }
+  .loading__front {
+    z-index: 35;
+  }
+
+
+}

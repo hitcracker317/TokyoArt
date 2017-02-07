@@ -15,9 +15,10 @@ function getEvent(url) {
       event.each(function(){
         makeEventDom($(this));
       });
-
     }, error: function(e) {
       console.log("エラー：" + JSON.stringify(e));
+    }, complete : function(data) {
+      $(".main__loading").css("display","none");
     }
   });
 }
