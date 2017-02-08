@@ -87,6 +87,10 @@
       .event__place p , .event__date p{
         font-size: 1.2rem;
         font-weight: normal;
+
+        .date__unit{
+          font-size: 1.0rem;
+        }
       }
     }
   }

@@ -5,6 +5,8 @@ $(function(){
 });
 
 function getEvent(url) {
+  $(".main__loading").css("display","block");
+
   //API叩く
   $.ajax({
     type: "GET",
@@ -28,8 +30,8 @@ function makeEventDom(event) {
   var titleContent = event.find('name').text();
   var placeContent = event.find('venue name').text();
   var addressContent = event.find('address').text();
-  var startTimeContent = event.find('DateStart').text();
-  var endTimeContent = event.find('DateEnd').text();
+  var startTimeContent = rewriteDateFormat(event.find('DateStart').text());
+  var endTimeContent = rewriteDateFormat(event.find('DateEnd').text());
   var imageURL = $(event.find('img')[2]).attr("src");
 
   var eventWrapper = $("<div class='event__wrapper'><a href=" + eventLink + " target=_'blank'></a></div>");
@@ -37,7 +39,7 @@ function makeEventDom(event) {
   var eventInfo = $("<div class='event__info'></div>");
   var eventTitleText = "<div class='event__title event__text'><p>" + titleContent + "</p></div>";
   var eventPlaceText = "<div class='event__place event__text'><p>" + addressContent + placeContent + "</p></div>";
-  var eventDateText = "<div class='event__date event__text'><p>" + startTimeContent + "~" + endTimeContent + "</p></div>";
+  var eventDateText = "<div class='event__date event__text'><p>" + startTimeContent + "〜" + endTimeContent + "</p></div>";
 
   //イベント要素
   $(".main__inner").append(eventWrapper);
@@ -56,4 +58,11 @@ function makeEventDom(event) {
   eventInfo.append(eventTitleText);
   eventInfo.append(eventPlaceText);
   eventInfo.append(eventDateText);
+}
+
+function rewriteDateFormat(timeText) {
+  //取得した日付の文字列の形式を変更
+  var dateArray = timeText.match(/(\d{4})-(\d{2})-(\d{2})/);
+  var rewriteDate = dateArray[1] + "<span class='date__unit'>年</span>"　+ Number(dateArray[2]) + "<span class='date__unit'>月</span>"　+ Number(dateArray[3]) + "<span class='date__unit'>日</span>";
+  return rewriteDate;
 }
