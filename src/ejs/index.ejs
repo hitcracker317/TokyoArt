@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%- include("./_head.ejs"); %>
+  <%- include("./_components/_head.ejs"); %>
 </head>
 <body>
+
+  <%- include("./_components/_search.ejs"); %>
+
   <header>
     <div class="header__innner">
       <div class="header__logo">
@@ -19,10 +22,10 @@
   <main>
     <div class="main__loading">
       <div class="loading__icon loading__front">
-        <img src="./asset/img/loading_front.png" width="100px" height="100px" alt="ローディングアニメーション">
+        <img src="./asset/img/loading_front.png" width="100px" height="100px" alt="loading">
       </div>
       <div class="loading__icon loading__back">
-        <img src="./asset/img/loading_back.png" width="100px" height="100px" alt="ローディングアニメーション">
+        <img src="./asset/img/loading_back.png" width="100px" height="100px" alt="loading">
       </div>
     </div>
 
@@ -34,5 +37,7 @@
       <p>Powered by Tokyo Art Beat</p>
     </div>
   </footer>
+
+
 </body>
 </html>

@@ -6,6 +6,7 @@
 header {
   position: fixed;
   width: 100%;
+  top: 0;
   height: $header-height;
   background-color: $header-color;
   z-index: 10;
@@ -28,11 +29,13 @@ header {
         @extend .image__centering;
       }
     }
+
     .header__search {
       position: absolute;
       right: 20px;
       width: 50px;
       margin-left: auto;
+      cursor: pointer;
 
       img {
         @extend .image__centering;
