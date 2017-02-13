@@ -81,6 +81,8 @@
           margin-bottom: 10px;
           color: $seach-text-color;
           font-size: 1.4rem;
+          text-decoration: underline;
+          font-weight: normal;
 
           @include column1 {
             font-size: 1.0rem;
