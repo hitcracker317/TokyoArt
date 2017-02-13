@@ -1,9 +1,10 @@
 $(function(){
 
   var scrollPos;
+  searchOpen(); //モーダルを表示
 
   $(".js--search").click(function(){
-    searchOpen(); //モーダルを表示
+    //searchOpen(); //モーダルを表示
   });
 
   $(".search__close--js").click(function(){

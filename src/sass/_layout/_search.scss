@@ -27,6 +27,40 @@
       border-width: 5px;
     }
 
+    .search__contents {
+      padding: 15px;
+
+      .search__category {
+        margin-bottom: 15px;
+
+        p {
+          display: inline-block;
+          vertical-align: middle;
+          color: $seach-text-color;
+          font-size: 1.8rem;
+
+          &::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 30px;
+            height: 3px;
+            margin-right: 10px;
+            background-color: $seach-text-color;
+          }
+          &::after {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 150px;
+            height: 3px;
+            margin-left: 10px;
+            background-color: $seach-text-color;
+          }
+        }
+      }
+    }
+
     .search__close {
       position: absolute;
       top: 0;

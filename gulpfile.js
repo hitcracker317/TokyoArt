@@ -63,11 +63,14 @@ ejs
 ------------------------ */
 gulp.task("ejs", function() {
   console.log("---------- ejsをHTMLに変換 ----------");
-  gulp.src(src.ejs + "**/*.ejs")
+  var jsonSearch = JSON.parse(fs.readFileSync(src.ejs + "json/search.json"));
+
+  gulp.src(src.ejs + "index.ejs")
   .pipe(plumber({
     errorHandler: notify.onError("Error: <%= error.message %>")
   }))
-  .pipe(ejs('', {"ext": ".html"}))
+  .pipe(ejs({jsonData: jsonSearch}))
+  .pipe(rename("index.html"))
   .pipe(gulp.dest(destPath))
   .pipe(browserSync.reload({stream:true}));
 });

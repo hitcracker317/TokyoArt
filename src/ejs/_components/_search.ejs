@@ -1,9 +1,20 @@
+<%
+  var jsonSearch = jsonData;
+%>
+
 <div class="search search--js">
   <div class="search__container search__container--js">
       <div class="search__close search__close--js">×</div>
 
       <div class="search__contents">
+
         <!-- ここに検索する項目を表示 -->
+
+
+        <% for (var index in jsonSearch) { %>
+          <h2 class="search__category"><p><%=  jsonSearch[index].category %></p></h2>
+        <% } %>
+
       </div>
   </div>
 </div>
