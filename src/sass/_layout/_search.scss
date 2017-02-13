@@ -20,9 +20,6 @@
     background-color: $seach-background-color;
     border: 10px solid $seach-border-color;
 
-    @include column2 {
-      border-width: 5px;
-    }
     @include column1 {
       border-width: 5px;
     }
@@ -30,14 +27,20 @@
     .search__contents {
       padding: 15px;
 
-      .search__category {
-        margin-bottom: 15px;
+      @include column1 {
+        padding: 10px;
+      }
 
+      .search__category {
         p {
           display: inline-block;
           vertical-align: middle;
           color: $seach-text-color;
           font-size: 1.8rem;
+
+          @include column1 {
+            font-size: 1.4rem;
+          }
 
           &::before {
             content: "";
@@ -47,6 +50,12 @@
             height: 3px;
             margin-right: 10px;
             background-color: $seach-text-color;
+
+            @include column1 {
+              width: 5px;
+              height: 20px;
+              margin-right: 5px;
+            }
           }
           &::after {
             content: "";
@@ -56,7 +65,27 @@
             height: 3px;
             margin-left: 10px;
             background-color: $seach-text-color;
+
+            @include column1 {
+              display: none;
+            }
           }
+        }
+      }
+
+      .search__content {
+        margin: 10px 0 10px 10px;
+        a {
+          display: inline-block;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          color: $seach-text-color;
+          font-size: 1.4rem;
+
+          @include column1 {
+            font-size: 1.0rem;
+          }
+
         }
       }
     }
@@ -65,9 +94,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      @include column2 {
-        right: 10px;
-      }
+
       @include column1 {
         right: 10px;
       }

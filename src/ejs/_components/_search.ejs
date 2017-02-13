@@ -9,10 +9,16 @@
       <div class="search__contents">
 
         <!-- ここに検索する項目を表示 -->
-
-
         <% for (var index in jsonSearch) { %>
-          <h2 class="search__category"><p><%=  jsonSearch[index].category %></p></h2>
+          <h2 class="search__category">
+            <p><%=  jsonSearch[index].category %></p>
+          </h2>
+
+          <p class="search__content">
+            <% for (var key in jsonSearch[index].contents) { %>
+              <a href="<%= jsonSearch[index].contents[key] %>"><%= key %></a>
+            <% } %>
+          </p>
         <% } %>
 
       </div>

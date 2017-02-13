@@ -10,6 +10,10 @@ $(function(){
   $(".search__close--js").click(function(){
     searchClose(); //モーダルを非表示
   });
+
+  $(".search__content a").click(function(){
+    return false;
+  });
 });
 
 
