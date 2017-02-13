@@ -1,0 +1,45 @@
+{
+  "2D": {
+    "イラスト": "http://www.tokyoartbeat.com/list/event_type_print_illustration.ja.xml",
+    "デッサン": "http://www.tokyoartbeat.com/list/event_type_print_drawing.ja.xml",
+    "グラフィックス": "http://www.tokyoartbeat.com/list/event_type_print_graphicdesign.ja.xml",
+    "絵画": "http://www.tokyoartbeat.com/list/event_type_print_painting.ja.xml",
+    "写真": "http://www.tokyoartbeat.com/list/event_type_print_photo.ja.xml",
+    "版画": "http://www.tokyoartbeat.com/list/event_type_print_prints.ja.xml",
+    "その他": "http://www.tokyoartbeat.com/list/event_type_print_other.ja.xml"
+  },
+  "3D": {
+    "建築": "http://www.tokyoartbeat.com/list/event_type_3D_architecture.ja.xml",
+    "彫刻・立体": "http://www.tokyoartbeat.com/list/event_type_3D_sculpture.ja.xml",
+    "工芸品": "http://www.tokyoartbeat.com/list/event_type_3D_crafts.ja.xml",
+    "ファッション": "http://www.tokyoartbeat.com/list/event_type_3D_fashion.ja.xml",
+    "家具": "http://www.tokyoartbeat.com/list/event_type_3D_furniture.ja.xml",
+    "インスタレーション": "http://www.tokyoartbeat.com/list/event_type_3D_installation.ja.xml",
+    "プロダクト": "http://www.tokyoartbeat.com/list/event_type_3D_productdesign.ja.xml",
+    "陶芸": "http://www.tokyoartbeat.com/list/event_type_3D_ceramics.ja.xml",
+    "その他": "http://www.tokyoartbeat.com/list/event_type_3D_other.ja.xml"
+  },
+  "スクリーン": {
+    "映画": "http://www.tokyoartbeat.com/list/event_type_screen_film.ja.xml",
+    "デジタル": "http://www.tokyoartbeat.com/list/event_type_screen_digital.ja.xml"
+  },
+  "場所で探す": {
+    "銀座・丸の内": "http://www.tokyoartbeat.com/list/event_area_ginza_marunouchi.ja.xml",
+    "上野・谷中": "http://www.tokyoartbeat.com/list/event_area_ueno_yanaka.ja.xml",
+    "京橋・日本橋": "http://www.tokyoartbeat.com/list/event_area_nihonbashi.ja.xml",
+    "表参道・青山": "http://www.tokyoartbeat.com/list/event_area_aoyama_omotesando.ja.xml",
+    "新宿": "http://www.tokyoartbeat.com/list/event_area_shinjuku.ja.xml",
+    "渋谷": "http://www.tokyoartbeat.com/list/event_area_shibuya_setagaya.ja.xml",
+    "六本木・乃木坂": "http://www.tokyoartbeat.com/list/event_area_akasaka_roppongi.ja.xml",
+    "恵比寿・代官山": "http://www.tokyoartbeat.com/list/event_area_ebisu_nakame_daikan.ja.xml",
+    "武蔵野・多摩": "http://www.tokyoartbeat.com/list/event_area_musashino_tama.ja.xml",
+    "馬喰町": "http://www.tokyoartbeat.com/list/event_area_bakurocho.ja.xml",
+    "千代田": "http://www.tokyoartbeat.com/list/event_area_chiyoda.ja.xml",
+    "白金・広尾": "http://www.tokyoartbeat.com/list/event_area_shirokane_hiroo.ja.xml",
+    "お台場・勝どき": "http://www.tokyoartbeat.com/list/event_area_koto_odaiba.ja.xml",
+    "清澄白川・両国": "http://www.tokyoartbeat.com/list/event_area_kiyosumi_ryogoku.ja.xml",
+    "市ヶ谷・神楽坂": "http://www.tokyoartbeat.com/list/event_area_ichigaya_kagurazaka.ja.xml",
+    "世田谷・川崎": "http://www.tokyoartbeat.com/list/event_area_setagaya_kawasaki.ja.xml",
+    "東京その他": "http://www.tokyoartbeat.com/list/event_area_tokyo_other.ja.xml"
+  },
+}
