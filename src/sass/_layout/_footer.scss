@@ -1,13 +1,11 @@
 .footer__inner {
   width: 100%;
   height: $footer-height;
-  background-color: $footer-color;
 
   p {
     font-size: 1.8rem;
     color: $footer-text-color;
     text-align: center;
     line-height: 70px;
-    font-weight: normal;
   }
 }

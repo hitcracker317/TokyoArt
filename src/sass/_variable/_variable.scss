@@ -5,10 +5,10 @@ $header-color: #fff;
 $header-height: 100px;
 $header-shadow-color: #333;
 
-$main-color: #de4f4f;
+$main-background-image: url("../img/backImage.png");
 $event-color: #fefefe;
 $event-border-color: #cecfce;
-$event-shadow-color: #e9e9e9;
+$event-shadow-color: #333;
 
 $seach-background-color: #222;
 $seach-border-color: #fff;
@@ -16,5 +16,4 @@ $seach-close-color: #358dd8;
 $seach-text-color: #fff;
 
 $footer-height: 70px;
-$footer-color: #de4f4f;
-$footer-text-color: #fff;
+$footer-text-color: #333;

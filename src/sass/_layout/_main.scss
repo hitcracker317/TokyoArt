@@ -2,17 +2,16 @@ main {
   width: 100%;
   min-height: calc(100% - #{$header-height} - #{$footer-height});
   padding-top: $header-height;
-  background-color: $main-color;
 
   .main__inner {
     display: flex;
     flex-wrap: wrap;
-    width: 1250px;
+    width: 100%;
+    max-width: 1250px;
     margin: 0 auto;
     padding: 50px 0 100px;
 
     @include min-column5 {
-      width: 100%;
       padding-right: 30px;
       padding-left: 30px;
     }
