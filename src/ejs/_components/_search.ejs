@@ -16,7 +16,8 @@
 
           <p class="search__content">
             <% for (var key in jsonSearch[index].contents) { %>
-              <a href="<%= jsonSearch[index].contents[key] %>"><%= key %></a>
+              <% var url = jsonSearch[index].contents[key]; %>
+              <a href="javascript:void(0)" onclick="getEvent('<%= url %>')"><%= key %></a>
             <% } %>
           </p>
         <% } %>

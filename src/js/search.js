@@ -1,10 +1,8 @@
 $(function(){
 
   var scrollPos;
-  searchOpen(); //モーダルを表示
-
   $(".js--search").click(function(){
-    //searchOpen(); //モーダルを表示
+    searchOpen(); //モーダルを表示
   });
 
   $(".search__close--js").click(function(){
@@ -12,7 +10,8 @@ $(function(){
   });
 
   $(".search__content a").click(function(){
-    return false;
+    searchClose();
+    $(".main__inner .event__wrapper").remove(); //domをリフレッシュ
   });
 });
 

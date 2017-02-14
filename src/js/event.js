@@ -1,7 +1,5 @@
 $(function(){
-  var url = "http://www.tokyoartbeat.com/list/event_mostpopular.ja.xml";
-  getEvent(url);
-
+  getEvent("http://www.tokyoartbeat.com/list/event_mostpopular.ja.xml");
 });
 
 function getEvent(url) {
