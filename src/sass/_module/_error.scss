@@ -1,0 +1,11 @@
+.main__error {
+  display: none;
+  @extend .center__position;
+  width: 100%;
+
+  .error__text {
+    color: $footer-text-color;
+    font-size: 5.0rem;
+    text-align: center;
+  }
+}

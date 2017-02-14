@@ -1,4 +1,4 @@
-.center_position {
+.center__position {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -6,7 +6,7 @@
 }
 
 .main__loading {
-  @extend .center_position;
+  @extend .center__position;
   width: 120px;
   height: 120px;
   background-color: #333;
@@ -14,7 +14,7 @@
   background-color: rgba(51, 51, 51, 0.7);
 
   .loading__icon {
-    @extend .center_position;
+    @extend .center__position;
     top: 10px;
     left: 10px;
     animation: loading_aimation 2.5s linear infinite;

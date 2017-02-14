@@ -4,6 +4,7 @@ $(function(){
 
 function getEvent(url) {
   $(".main__loading").css("display","block");
+  $(".main__error").css("display","none");
 
   //API叩く
   $.ajax({
@@ -12,13 +13,20 @@ function getEvent(url) {
     dataType: 'xml',
     success: function(data){
       var event = $(data.responseText).find("event");
-      event.each(function(){
-        makeEventDom($(this));
-      });
+      if(event.length == 0 ) {
+        notFoundDom("Not Found");
+      } else {
+        event.each(function(){
+          makeEventDom($(this));
+        });
+      }
+
     }, error: function(e) {
-      console.log("エラー：" + JSON.stringify(e));
+      notFoundDom("Error");
+
     }, complete : function(data) {
       $(".main__loading").css("display","none");
+
     }
   });
 }
@@ -63,4 +71,9 @@ function rewriteDateFormat(timeText) {
   var dateArray = timeText.match(/(\d{4})-(\d{2})-(\d{2})/);
   var rewriteDate = dateArray[1] + "<span class='date__unit'>年</span>"　+ Number(dateArray[2]) + "<span class='date__unit'>月</span>"　+ Number(dateArray[3]) + "<span class='date__unit'>日</span>";
   return rewriteDate;
+}
+
+function notFoundDom(text) {
+  $(".main__error").css("display","block");
+  $(".main__error .error__text").text(text);
 }

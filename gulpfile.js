@@ -196,7 +196,8 @@ gulp.task("sprite-min", function() {
 
 //監視
 gulp.task("watch", function(){
-  gulp.watch(src.ejs + "./**/*.ejs", ["ejs"]);
+  gulp.watch(src.ejs + "./**/*.ejs", ["ejs"]); 
+  gulp.watch(src.ejs + "json/search.json", ["ejs"]);
   gulp.watch(src.sass + "/**/*.scss",["sass"]);
   gulp.watch(src.js + "/**/*.js",["js"]);
   gulp.watch(src.img + "/**/*.+(jpg|jpeg|png|gif)",["imagemin"]);
