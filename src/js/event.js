@@ -36,8 +36,11 @@ function makeEventDom(event) {
   var titleContent = event.find('name').text();
   var placeContent = event.find('venue name').text();
   var addressContent = event.find('address').text();
-  var startTimeContent = rewriteDateFormat(event.find('DateStart').text());
-  var endTimeContent = rewriteDateFormat(event.find('DateEnd').text());
+
+  var startText = event.find('DateStart').text();
+  var startTimeContent = rewriteDateFormat(startText);
+  var endText = event.find('DateEnd').text();
+  var endTimeContent = rewriteDateFormat(endText);
   var imageURL = $(event.find('img')[2]).attr("src");
 
   var eventWrapper = $("<div class='event__wrapper'><a href=" + eventLink + " target=_'blank'></a></div>");
@@ -45,7 +48,11 @@ function makeEventDom(event) {
   var eventInfo = $("<div class='event__info'></div>");
   var eventTitleText = "<div class='event__title event__text'><p>" + titleContent + "</p></div>";
   var eventPlaceText = "<div class='event__place event__text'><p>" + addressContent + placeContent + "</p></div>";
-  var eventDateText = "<div class='event__date event__text'><p>" + startTimeContent + "〜" + endTimeContent + "</p></div>";
+  if(startText == "0000-00-00" || endText == "0000-00-00") {
+     $(".event__date").css("display","none");
+  } else {
+    var eventDateText = "<div class='event__date event__text'><p>" + startTimeContent + "〜" + endTimeContent + "</p></div>";
+  }
 
   //イベント要素
   $(".main__inner").append(eventWrapper);
