@@ -42,7 +42,7 @@ function makeEventDom(event) {
   var endTimeContent = rewriteDateFormat(endText);
   var imageURL = $(event.find('img')[2]).attr("src");
 
-  var eventWrapper = $("<div class='event__wrapper'><a href=" + eventLink + " target=_'blank'></a></div>");
+  var eventWrapper = $("<div class='event'><div class='event__inner'><a href=" + eventLink + " target=_'blank'></a></div></div>");
   var eventImage = $("<div class='event__image'><div class='image__innner'></div></div>");
   var eventInfo = $("<div class='event__info'></div>");
   var eventTitleText = "<div class='event__title event__text'><p>" + titleContent + "</p></div>";

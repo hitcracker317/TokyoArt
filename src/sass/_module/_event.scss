@@ -34,65 +34,86 @@
   }
 }
 
-.event__wrapper {
+.event {
+  position: relative;
   @include column;
   margin-right: 1%;
   margin-bottom: 30px;
-  padding: 25px 15px 15px 15px;
-  border: 1px solid $event-border-color;
 
-  box-shadow: 0 5px 10px 0px rgba(51,51,51,0.7);
-  background-color: $event-color;
-  overflow: hidden;
-
-  a {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 30px;
+    height: 30px;
+    background-color: $event-pin-color;
+    border-radius: 50%;
+    box-shadow: 0 3px $event-pin-shadow;
+  }
 
-    .event__image {
-      position: relative;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      background-color: #fff;
+  .event__inner {
+    padding: 50px 15px 15px 15px;
+    border: 1px solid $event-border-color;
+    box-shadow: 0 5px 10px 0px rgba(51,51,51,0.7);
+    background-color: $event-color;
+    transition: 0.3s all ease-in;
+    transform-origin: 50% 10px;
 
-      .image__innner {
-        display: block;
-        width: 100%;
-        padding-top: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
-      }
+    &:hover {
+      transform: rotate(-3deg);
     }
 
-    .event__info {
-      padding-top: 15px;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
 
-      .event__text {
-        margin-bottom: 5px;
+      .event__image {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background-color: #fff;
 
-        p {
-          color: #333;
+        .image__innner {
+          display: block;
+          width: 100%;
+          padding-top: 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
         }
       }
-      .event__title p {
-        font-size: 1.8rem;
-        font-weight: bold;
-      }
-      .event__place p , .event__date p{
-        font-size: 1.2rem;
-        font-weight: normal;
 
-        .date__unit{
-          font-size: 1.0rem;
+      .event__info {
+        padding-top: 15px;
+
+        .event__text {
+          margin-bottom: 5px;
+
+          p {
+            color: #333;
+          }
+        }
+        .event__title p {
+          font-size: 1.8rem;
+          font-weight: bold;
+        }
+        .event__place p , .event__date p{
+          font-size: 1.2rem;
+          font-weight: normal;
+
+          .date__unit{
+            font-size: 1.0rem;
+          }
         }
       }
     }
   }
-
 }

@@ -11,7 +11,7 @@ $(function(){
 
   $(".search__content a").click(function(){
     searchClose();
-    $(".main__inner .event__wrapper").remove(); //domをリフレッシュ
+    $(".main__inner .event").remove(); //domをリフレッシュ
   });
 });
 
