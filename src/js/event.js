@@ -26,7 +26,6 @@ function getEvent(url) {
 
     }, complete : function(data) {
       $(".main__loading").css("display","none");
-
     }
   });
 }

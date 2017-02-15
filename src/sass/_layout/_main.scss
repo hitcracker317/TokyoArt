@@ -6,6 +6,7 @@ main {
   .main__inner {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     width: 100%;
     max-width: 1250px;
     margin: 0 auto;

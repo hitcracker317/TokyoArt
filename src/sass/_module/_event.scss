@@ -1,5 +1,4 @@
 @mixin column{
-
   @include column5 {
     width: 19.2%;
     &:nth-child(5n) {
@@ -38,7 +37,7 @@
 .event__wrapper {
   @include column;
   margin-right: 1%;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   padding: 25px 15px 15px 15px;
   border: 1px solid $event-border-color;
 
@@ -73,7 +72,6 @@
 
     .event__info {
       padding-top: 15px;
-      //padding-bottom: 5px;
 
       .event__text {
         margin-bottom: 5px;
