@@ -23,10 +23,22 @@ header {
     margin: 0 auto;
 
     .header__logo {
-      width: 100px;
+      width: 90px;
+      border: 5px solid $header-radius-color;
+      border-radius: 50%;
 
       img {
         @extend .image__centering;
+      }
+    }
+
+    .header__text {
+      margin-left: 15px;
+      color: $header-text-color;
+      font-size: 2.5rem;
+
+      @include column1{
+        display: none;
       }
     }
 
