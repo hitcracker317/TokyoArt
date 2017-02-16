@@ -4,12 +4,16 @@ $(function(){
   $(window).scroll(function(){
     var currentPos = $(this).scrollTop();
 
-    //headerの表示、非表示
-    if(currentPos > startPos){
-      $("header").addClass("header--hidden");
-    } else {
-      $("header").removeClass("header--hidden");
+    if (currentPos >= 0) {
+      //headerの表示、非表示
+      if(currentPos > startPos){
+        console.log("下にスクロール");
+        $("header").addClass("header--hidden");
+      } else {
+        $("header").removeClass("header--hidden");
+        console.log("上にスクロール");
+      }
+      startPos = currentPos;
     }
-    startPos = currentPos;
   });
 });
