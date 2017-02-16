@@ -3,6 +3,10 @@
   height: auto;
 }
 
+.header--hidden {
+  top: -$header-height;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -11,6 +15,7 @@ header {
   background-color: $header-color;
   z-index: 10;
   box-shadow: 0 2px 15px $header-shadow-color;
+  transition: 0.3s all ease-in;
 
   .header__innner {
     position: relative;
@@ -54,5 +59,4 @@ header {
       }
     }
   }
-
 }
