@@ -14,14 +14,16 @@
             <p><%=  jsonSearch[index].category %></p>
           </h2>
 
-          <form name="eventForm">
-            <select name="event" class="search__content" onchange="selectEvent(this)">
-              <option value='' disabled selected style='display:none;'>選択してください</option>
-              <% for (var key in jsonSearch[index].contents) { %>
-                <% var url = jsonSearch[index].contents[key]; %>
-                <option value="<%= url %>"><%= key %></option>
-              <% } %>
-            </select>
+          <form name="eventForm" class="search__form">
+            <label for="event" class="search__group">
+              <select name="event" class="search__content" onchange="selectEvent(this)">
+                <option value='' disabled selected style='display:none;'>選択してください</option>
+                <% for (var key in jsonSearch[index].contents) { %>
+                  <% var url = jsonSearch[index].contents[key]; %>
+                  <option value="<%= url %>"><%= key %></option>
+                <% } %>
+              </select>
+            </label>
           </form>
 
         <% } %>

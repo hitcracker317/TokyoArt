@@ -11,10 +11,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-
     width: 90%;
-    max-width: 800px;
-    min-height: 200px;
+    max-width: 400px;
     box-sizing: border-box;
     background-color: $seach-background-color;
     border: 10px solid $seach-border-color;
@@ -38,7 +36,7 @@
           font-size: 1.8rem;
 
           @include column1 {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
           }
 
           &::before {
@@ -50,11 +48,11 @@
             margin-right: 10px;
             background-color: $seach-text-color;
 
-            @include column1 {
-              width: 5px;
-              height: 20px;
-              margin-right: 5px;
-            }
+            // @include column1 {
+            //   width: 5px;
+            //   height: 20px;
+            //   margin-right: 5px;
+            // }
           }
           &::after {
             content: "";
@@ -66,25 +64,47 @@
             background-color: $seach-text-color;
 
             @include column1 {
-              display: none;
+              width: 30px;
             }
           }
         }
       }
 
-      .search__content {
-        margin: 10px 0 10px 10px;
-        a {
-          display: inline-block;
-          margin-right: 10px;
-          margin-bottom: 10px;
-          color: $seach-text-color;
-          font-size: 1.4rem;
-          text-decoration: underline;
-          font-weight: normal;
+      .search__form {
+        margin: 10px 0 20px;
+        text-align: center;
 
-          @include column1 {
-            font-size: 1.0rem;
+        $search-content-height: 40px;
+        $search-content-border-width: 3px;
+
+        .search__group {
+          position: relative;
+          display: block;
+          width: 200px;
+          margin: 0 auto;
+          background-color: #fcc;
+
+          .search__content {
+            width: 100%;
+            height: $search-content-height;
+            padding: 10px;
+            background-color: #444;
+            border: $search-content-border-width solid $seach-border-color;
+            color: $seach-text-color;
+          }
+
+          &::before{
+            content: "▼";
+            position: absolute;
+            top: $search-content-border-width;
+            right: $search-content-border-width;
+            width: $search-content-height - (2 * $search-content-border-width);
+            height: $search-content-height - (2 * $search-content-border-width);
+            color: $seach-text-color;
+            font-size: 1.5rem;
+            line-height: $search-content-height - (2 * $search-content-border-width);
+            background-color: $event-pin-color;
+            pointer-events : none;
           }
         }
       }
