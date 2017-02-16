@@ -2,6 +2,7 @@
   {
     "category": "2D",
     "contents": {
+      "書道": "http://www.tokyoartbeat.com/list/event_type_print_calligraphy.ja.xml",
       "イラスト": "http://www.tokyoartbeat.com/list/event_type_print_illustration.ja.xml",
       "デッサン": "http://www.tokyoartbeat.com/list/event_type_print_drawing.ja.xml",
       "グラフィックス": "http://www.tokyoartbeat.com/list/event_type_print_graphicdesign.ja.xml",

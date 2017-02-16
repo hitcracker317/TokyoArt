@@ -31,4 +31,7 @@ function selectEvent(selectObj){
   var index = selectObj.selectedIndex;
   var url = selectObj.options[index].value;
   getEvent(url);
+  $(".search__content").each(function(){
+    this.selectedIndex = 0;
+  });
 }
