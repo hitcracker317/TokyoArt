@@ -141,7 +141,7 @@ img
 ------------------------ */
 gulp.task("imagemin", function(){
   console.log("---------- 画像を圧縮 ----------");
-  return gulp.src(src.img + "/**/*.+(jpg|jpeg|png|gif|svg|ico)")
+  return gulp.src(src.img + "/**/*.+(jpg|jpeg|png|gif|svg)")
   .pipe(imagemin({
     progressive: true,
     use: [pngquant({quality: "65-80", speed: 1})]
@@ -155,7 +155,7 @@ gulp.task("watch", function(){
   gulp.watch(src.ejs + "json/search.json", ["ejs"]);
   gulp.watch(src.sass + "/**/*.scss",["sass"]);
   gulp.watch(src.js + "/**/*.js",["js"]);
-  gulp.watch(src.img + "/**/*.+(jpg|jpeg|png|gif|ico|svg)",["imagemin"]);
+  gulp.watch(src.img + "/**/*.+(jpg|jpeg|png|gif|svg)",["imagemin"]);
 });
 
 //ローカルサーバー
