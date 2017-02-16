@@ -8,7 +8,6 @@ var sass = require("gulp-sass");
 var autoprefixer = require("gulp-autoprefixer");
 var cssmin = require("gulp-cssmin");
 var rename = require("gulp-rename");
-var spritesmith = require("gulp.spritesmith");
 
 //js
 var concat = require("gulp-concat");
@@ -42,8 +41,7 @@ var src = {
   sass: srcPath + "sass/",
   js: srcPath + "js/",
   php: srcPath + "php/",
-  img: srcPath + "img/",
-  sprite: srcPath + "img/sprite/"
+  img: srcPath + "img/"
 }
 
 var destPath = "dest/";
@@ -53,8 +51,7 @@ var dest = {
   js: destPath + "asset/js/",
   jsmin: destPath + "asset/jsmin/",
   php: destPath + "asset/php/",
-  img: destPath + "asset/img/",
-  sprite: destPath + "asset/img/sprite/"
+  img: destPath + "asset/img/"
 }
 
 
@@ -144,7 +141,7 @@ img
 ------------------------ */
 gulp.task("imagemin", function(){
   console.log("---------- 画像を圧縮 ----------");
-  return gulp.src(src.img + "/**/*.+(jpg|jpeg|png|gif|svg)")
+  return gulp.src(src.img + "/**/*.+(jpg|jpeg|png|gif|svg|ico)")
   .pipe(imagemin({
     progressive: true,
     use: [pngquant({quality: "65-80", speed: 1})]
@@ -152,56 +149,13 @@ gulp.task("imagemin", function(){
   .pipe(gulp.dest(dest.img));
 });
 
-
-/* ------------------------
-css sprite
------------------------- */
-gulp.task("sprite", function(callback) {
-  console.log("---------- スプライト画像を作成 ----------");
-  return runSequence("spriteIcon","sass",["css-min","sprite-min"],callback);
-});
-
-//スプライト画像生成
-gulp.task("spriteIcon", function () {
-  var spriteFolders = getFolders(src.sprite);
-  spriteFolders.forEach(function(folderName){
-    var spriteData = gulp.src(src.sprite + folderName + "/**/*.+(jpg|jpeg|png|gif)")
-    .pipe(spritesmith({
-      imgName: folderName + ".png",
-      cssName: "_" + folderName + ".scss",
-      imgPath: "../img/sprite/" + folderName + ".png",
-      cssFormat: "scss",
-      cssVarMap: function(sprite) {
-        sprite.name = "icon-" + sprite.name;
-      }
-    }));
-    spriteData.img.pipe(gulp.dest(src.sprite));
-    spriteData.css.pipe(gulp.dest(src.sass + "_sprite/"));
-  });
-});
-
-//スプライト画像圧縮
-gulp.task("sprite-min", function() {
-  return gulp.src(src.sprite + "/**/*.+(jpg|jpeg|png|gif)")
-  .pipe(plumber({
-    errorHandler: notify.onError("Error: <%= error.message %>")
-  }))
-  .pipe(imagemin({
-    progressive: true,
-    use: [pngquant({quality: "65-80", speed: 1})]
-  }))
-  .pipe(gulp.dest(dest.sprite));
-});
-
-
 //監視
 gulp.task("watch", function(){
-  gulp.watch(src.ejs + "./**/*.ejs", ["ejs"]); 
+  gulp.watch(src.ejs + "./**/*.ejs", ["ejs"]);
   gulp.watch(src.ejs + "json/search.json", ["ejs"]);
   gulp.watch(src.sass + "/**/*.scss",["sass"]);
   gulp.watch(src.js + "/**/*.js",["js"]);
-  gulp.watch(src.img + "/**/*.+(jpg|jpeg|png|gif)",["imagemin"]);
-  gulp.watch(src.sprite + "/**/*.+(jpg|jpeg|png|gif)",["sprite"]);
+  gulp.watch(src.img + "/**/*.+(jpg|jpeg|png|gif|ico|svg)",["imagemin"]);
 });
 
 //ローカルサーバー
@@ -215,4 +169,4 @@ gulp.task("server", function(){
   });
 });
 
-gulp.task("default",["ejs","sass","js","imagemin","sprite","watch","server"]);
+gulp.task("default",["ejs","sass","js","imagemin","watch","server"]);
