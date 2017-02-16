@@ -14,12 +14,16 @@
             <p><%=  jsonSearch[index].category %></p>
           </h2>
 
-          <p class="search__content">
-            <% for (var key in jsonSearch[index].contents) { %>
-              <% var url = jsonSearch[index].contents[key]; %>
-              <a href="javascript:void(0)" onclick="getEvent('<%= url %>')"><%= key %></a>
-            <% } %>
-          </p>
+          <form name="eventForm">
+            <select name="event" class="search__content" onchange="selectEvent(this)">
+              <option value='' disabled selected style='display:none;'>選択してください</option>
+              <% for (var key in jsonSearch[index].contents) { %>
+                <% var url = jsonSearch[index].contents[key]; %>
+                <option value="<%= url %>"><%= key %></option>
+              <% } %>
+            </select>
+          </form>
+
         <% } %>
 
       </div>

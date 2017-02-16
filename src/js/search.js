@@ -8,11 +8,6 @@ $(function(){
   $(".search__close--js").click(function(){
     searchClose(); //モーダルを非表示
   });
-
-  $(".search__content a").click(function(){
-    searchClose();
-    $(".main__inner .event").remove(); //domをリフレッシュ
-  });
 });
 
 
@@ -27,4 +22,13 @@ function searchClose() {
   $("body").removeClass("body__fixed").css({top: headerHeight});
   $(window).scrollTop(scrollPos);
   $(".search--js").fadeOut(300);
+}
+
+function selectEvent(selectObj){
+  searchClose();
+  $(".main__inner .event").remove(); //domをリフレッシュ
+
+  var index = selectObj.selectedIndex;
+  var url = selectObj.options[index].value;
+  getEvent(url);
 }
